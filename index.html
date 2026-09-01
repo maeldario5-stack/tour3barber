@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tour 3 Barber — Coiffeur & Barber Shop à Monthey</title>
+<meta name="description" content="Tour 3 Barber par Nicolas à Monthey. Dégradés, tapers, mèches, couleurs sur mesure. Service à domicile. Réservation en ligne." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Tour3Barber","description":"Bienvenue chez T3B Barber. Je propose des coupes sur mesure : tapers, dégradés, coupes aux ciseaux, mèches, couleurs et plus encore. Je me déplace directement chez vous pour vous offrir un service de qualité.","address":{"@type":"PostalAddress","addressLocality":"Monthey","addressRegion":"Valais","addressCountry":"CH"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Monday","opens":"10:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Monday","opens":"13:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Tuesday","opens":"19:00","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Wednesday","opens":"19:00","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Thursday","opens":"19:00","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Friday","opens":"19:00","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Saturday","opens":"18:00","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Sunday","opens":"10:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Sunday","opens":"14:00","closes":"18:00"}]}
+</script>
+<style>
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#121212;color:#fff;overflow-x:hidden;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:transparent;font-family:inherit}
+ul{list-style:none}
+
+/* =============================================
+   VARIABLES
+   ============================================= */
+:root{
+  --gold:#D4AF37;
+  --gold-light:#E8C84A;
+  --gold-muted:#C5A059;
+  --gold-glow:rgba(212,175,55,.25);
+  --bg:#121212;
+  --bg-card:#1A1A1A;
+  --bg-card2:#222;
+  --text:#fff;
+  --text-2:#A0A0A0;
+  --text-3:#666;
+  --border:rgba(255,255,255,.08);
+  --border-gold:rgba(212,175,55,.3);
+  --rad:14px;
+  --rad-sm:8px;
+  --rad-full:9999px;
+  --tr:.28s cubic-bezier(.4,0,.2,1);
+  --shadow:0 12px 40px rgba(0,0,0,.6);
+  --shadow-gold:0 8px 30px rgba(212,175,55,.25);
+}
+
+/* =============================================
+   TYPOGRAPHY
+   ============================================= */
+h1,h2,h3,h4{font-family:'Syne',sans-serif;font-weight:800;line-height:1.15;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,5.5vw,4rem)}
+h2{font-size:clamp(1.7rem,3.5vw,2.6rem)}
+h3{font-size:1.2rem;font-weight:700}
+
+.gold{color:var(--gold)}
+.gradient-gold{background:linear-gradient(135deg,#ffe680 0%,var(--gold) 55%,var(--gold-muted) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* =============================================
+   LAYOUT
+   ============================================= */
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0}
+
+/* =============================================
+   PILLS / TAGS
+   ============================================= */
+.pill{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;background:rgba(212,175,55,.08);border:1px solid var(--border-gold);border-radius:var(--rad-full);color:var(--gold);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.85rem 2rem;border-radius:var(--rad);font-size:.95rem;font-weight:700;transition:all var(--tr);white-space:nowrap;line-height:1}
+.btn-primary{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-muted) 100%);color:#000;box-shadow:var(--shadow-gold)}
+.btn-primary:hover{background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 100%);transform:translateY(-2px);box-shadow:0 14px 35px rgba(212,175,55,.4)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.2)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn-gold-sm{background:rgba(212,175,55,.08);color:var(--gold);border:1px solid var(--border-gold);min-height:44px;padding:.6rem 1.2rem;border-radius:var(--rad-sm);font-size:.88rem;font-weight:700;transition:all var(--tr)}
+.btn-gold-sm:hover{background:var(--gold);color:#000}
+
+/* =============================================
+   HEADER / NAV
+   ============================================= */
+#header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:1.1rem 0;transition:all .4s ease}
+#header.scrolled{background:rgba(18,18,18,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.5);padding:.7rem 0}
+.nav-inner{display:flex;align-items:center;gap:2rem}
+.logo-link{display:flex;align-items:center;gap:.85rem;flex-shrink:0}
+.logo-link img{height:48px;width:auto;object-fit:contain}
+.logo-wordmark{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;letter-spacing:.08em;line-height:1.1}
+.logo-wordmark span{display:block;font-size:.7rem;font-weight:600;color:var(--gold);letter-spacing:.2em;margin-top:.1rem}
+.nav-links{display:flex;align-items:center;gap:1.75rem;margin-left:auto}
+.nav-link{font-size:.9rem;font-weight:600;color:var(--text-2);position:relative;padding:.25rem 0;transition:color var(--tr)}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width var(--tr);border-radius:2px}
+.nav-link:hover,.nav-link.active{color:#fff}
+.nav-link:hover::after,.nav-link.active::after{width:100%}
+.nav-cta{margin-left:1rem}
+.burger{display:none;flex-direction:column;gap:5px;padding:.5rem;min-height:48px;min-width:48px;align-items:center;justify-content:center}
+.burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s ease;transform-origin:center}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* Mobile Drawer */
+.mob-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);z-index:998;opacity:0;visibility:hidden;transition:all .35s ease}
+.mob-overlay.show{opacity:1;visibility:visible}
+.mob-drawer{position:fixed;top:0;right:-300px;width:280px;height:100vh;background:var(--bg-card);border-left:1px solid var(--border-gold);z-index:999;display:flex;flex-direction:column;padding:1.5rem;transition:right .35s cubic-bezier(.16,1,.3,1)}
+.mob-drawer.show{right:0}
+.mob-close{align-self:flex-end;padding:.5rem;font-size:1.5rem;color:var(--text-2);margin-bottom:1.5rem}
+.mob-links{display:flex;flex-direction:column;gap:1.5rem}
+.mob-links a{font-size:1.15rem;font-weight:700;color:var(--text-2);padding:.5rem 0;border-bottom:1px solid var(--border)}
+.mob-links a:hover{color:var(--gold)}
+.mob-drawer .btn{width:100%;margin-top:2rem}
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:6rem}
+.hero-bg{position:absolute;inset:0;z-index:1}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.35) contrast(1.1)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(18,18,18,.6) 0%,rgba(18,18,18,.4) 40%,rgba(18,18,18,.95) 100%)}
+.hero-content{position:relative;z-index:2;max-width:780px}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1.1rem;background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid var(--border-gold);border-radius:var(--rad-full);margin-bottom:1.5rem;font-size:.88rem}
+.stars{display:flex;gap:2px;color:var(--gold)}
+.hero h1{margin-bottom:1.25rem}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-2);margin-bottom:2.5rem;max-width:600px;line-height:1.75}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3rem}
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.stat-item{text-align:left}
+.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1}
+.stat-label{font-size:.8rem;color:var(--text-2);margin-top:.3rem;text-transform:uppercase;letter-spacing:.08em}
+
+/* =============================================
+   SECTION TITLE (centré)
+   ============================================= */
+.sec-head{text-align:center;max-width:640px;margin:0 auto 3.5rem}
+.sec-head p{font-size:1.05rem;color:var(--text-2);margin-top:.75rem}
+
+/* =============================================
+   SERVICES — 2 colonnes (réelles SumUp)
+   ============================================= */
+.services-bg{background:var(--bg)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.75rem}
+.svc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rad);overflow:hidden;display:flex;flex-direction:column;transition:all var(--tr)}
+.svc-card:hover{transform:translateY(-6px);border-color:var(--border-gold);box-shadow:var(--shadow-gold)}
+.svc-img{position:relative;height:200px;overflow:hidden;flex-shrink:0}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.svc-card:hover .svc-img img{transform:scale(1.06)}
+.svc-badge{position:absolute;top:.85rem;right:.85rem;background:rgba(18,18,18,.88);backdrop-filter:blur(6px);border:1px solid var(--border-gold);color:var(--gold);font-size:.78rem;font-weight:700;padding:.3rem .75rem;border-radius:var(--rad-full)}
+.svc-body{padding:1.4rem;display:flex;flex-direction:column;flex:1}
+.svc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.6rem}
+.svc-name{font-size:1.2rem;font-family:'Syne',sans-serif;font-weight:800}
+.svc-price{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;color:var(--gold);white-space:nowrap}
+.svc-desc{font-size:.88rem;color:var(--text-2);line-height:1.6;flex:1;margin-bottom:1.2rem}
+.svc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--border)}
+.svc-dur{font-size:.82rem;color:var(--text-3);display:flex;align-items:center;gap:.35rem}
+
+/* =============================================
+   GALLERY CAROUSEL
+   ============================================= */
+.gallery-bg{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.gallery-carousel-wrap{position:relative;overflow:hidden;border-radius:var(--rad);box-shadow:var(--shadow)}
+.gallery-track{display:flex;transition:transform .55s cubic-bezier(.16,1,.3,1)}
+.gallery-slide{min-width:100%;position:relative}
+.gallery-slide img{width:100%;height:60vh;min-height:340px;max-height:580px;object-fit:contain;background:#111;display:block}
+.gallery-slide-cap{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 2rem;background:linear-gradient(0deg,rgba(18,18,18,.95) 0%,transparent 100%)}
+.slide-num{font-size:.8rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:52px;height:52px;border-radius:var(--rad-full);background:rgba(18,18,18,.75);backdrop-filter:blur(8px);border:1px solid var(--border-gold);color:var(--gold);display:flex;align-items:center;justify-content:center;transition:all var(--tr)}
+.gallery-arrow:hover{background:var(--gold);color:#000}
+.gallery-arrow.prev{left:1.25rem}
+.gallery-arrow.next{right:1.25rem}
+.gallery-dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.5rem}
+.gdot{width:8px;height:8px;border-radius:var(--rad-full);background:rgba(255,255,255,.2);cursor:pointer;transition:all var(--tr)}
+.gdot.active{width:28px;background:var(--gold)}
+.gallery-thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem;margin-top:.75rem}
+.gthumb{position:relative;aspect-ratio:1;overflow:hidden;border-radius:var(--rad-sm);cursor:pointer;border:2px solid transparent;transition:all var(--tr)}
+.gthumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gthumb:hover img{transform:scale(1.1)}
+.gthumb.active{border-color:var(--gold)}
+
+/* =============================================
+   À PROPOS
+   ============================================= */
+.about-bg{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;height:480px;object-fit:cover;border-radius:var(--rad);border:1px solid var(--border-gold)}
+.about-badge{position:absolute;bottom:-1.25rem;right:-1.25rem;background:var(--bg-card2);border:1px solid var(--border-gold);border-radius:var(--rad);padding:1.25rem 1.75rem;box-shadow:var(--shadow-gold);display:flex;align-items:center;gap:1rem}
+.badge-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);line-height:1}
+.badge-lbl{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;line-height:1.4}
+.about-text h2{margin-bottom:1rem}
+.about-text p{color:var(--text-2);line-height:1.8;margin-bottom:1rem}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.75rem}
+.feat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rad-sm);padding:1.1rem}
+.feat-card h4{font-size:.9rem;font-weight:700;color:var(--gold);margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
+.feat-card p{font-size:.82rem;color:var(--text-2)}
+
+/* =============================================
+   AVIS CLIENTS
+   ============================================= */
+.reviews-bg{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.reviews-carousel-wrap{position:relative;max-width:800px;margin:0 auto;overflow:hidden}
+.reviews-track{display:flex;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.review-slide{min-width:100%;padding:0 .5rem}
+.review-card{background:var(--bg);border:1px solid var(--border-gold);border-radius:var(--rad);padding:2.5rem;text-align:center;box-shadow:var(--shadow)}
+.review-stars{justify-content:center;display:flex;gap:4px;margin-bottom:1.25rem;font-size:1.1rem;color:var(--gold)}
+.review-quote{font-size:1.1rem;line-height:1.8;color:#fff;font-style:italic;margin-bottom:1.75rem}
+.review-author{display:flex;align-items:center;justify-content:center;gap:.85rem}
+.r-avatar{width:46px;height:46px;border-radius:var(--rad-full);background:linear-gradient(135deg,var(--gold),var(--gold-muted));color:#000;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center}
+.r-name{font-weight:700;text-align:left}
+.r-city{font-size:.8rem;color:var(--gold);text-align:left}
+.rev-nav{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:2rem}
+.rev-arrow{width:46px;height:46px;border-radius:var(--rad-full);background:var(--bg);border:1px solid var(--border-gold);color:var(--gold);display:flex;align-items:center;justify-content:center;transition:all var(--tr)}
+.rev-arrow:hover{background:var(--gold);color:#000}
+.rev-dots{display:flex;gap:.5rem}
+.rdot{width:9px;height:9px;border-radius:var(--rad-full);background:rgba(255,255,255,.2);cursor:pointer;transition:all var(--tr)}
+.rdot.active{width:26px;background:var(--gold)}
+
+/* =============================================
+   CONTACT / HORAIRES
+   ============================================= */
+.contact-bg{background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:stretch}
+.info-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rad);padding:2rem;display:flex;flex-direction:column;gap:1.75rem}
+.info-card h3{font-size:1.4rem;margin-bottom:.25rem}
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table tr{border-bottom:1px dashed rgba(255,255,255,.07)}
+.hours-table tr:last-child{border-bottom:none}
+.hours-table td{padding:.6rem 0;font-size:.92rem}
+.hours-table td:first-child{font-weight:700;color:#fff;width:120px}
+.hours-table td:last-child{color:var(--gold);font-weight:600;text-align:right}
+.social-card{background:var(--bg-card);border:1px solid var(--border-gold);border-radius:var(--rad);padding:2rem;display:flex;flex-direction:column;gap:1.5rem}
+.social-card h3{font-size:1.4rem;margin-bottom:.1rem}
+.social-card > p{font-size:.88rem;color:var(--text-2);line-height:1.7}
+.social-link{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.25rem;background:var(--bg-card2);border:1px solid var(--border);border-radius:var(--rad-sm);transition:all var(--tr);text-decoration:none}
+.social-link:hover{border-color:var(--border-gold);transform:translateX(4px);background:#2a2a2a}
+.social-link svg{flex-shrink:0;color:var(--gold)}
+.social-link strong{display:block;font-weight:700;font-size:.95rem;color:#fff}
+.social-link span{display:block;font-size:.82rem;color:var(--text-2)}
+.social-location{padding:1rem 1.25rem;background:rgba(212,175,55,.05);border:1px dashed var(--border-gold);border-radius:var(--rad-sm);font-size:.85rem;color:var(--text-2);line-height:1.7}
+.social-location strong{color:#fff;display:block;margin-bottom:.25rem}
+.cta-box{width:100%;margin-top:.25rem}
+/* Footer social icons */
+.footer-socials{display:flex;flex-direction:column;gap:.75rem;margin-top:.5rem}
+.footer-social-link{display:flex;align-items:center;gap:.75rem;color:var(--text-2);font-size:.88rem;transition:color var(--tr)}
+.footer-social-link:hover{color:var(--gold)}
+.footer-social-link svg{flex-shrink:0}
+.footer-brand img{height:80px;width:auto;object-fit:contain}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer{background:#0a0a0a;border-top:1px solid var(--border);padding:3rem 0 2rem}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-brand{display:flex;flex-direction:column;gap:1rem}
+.footer-brand img{height:56px;width:auto}
+.footer-brand p{font-size:.88rem;color:var(--text-2);line-height:1.7}
+.footer-col h4{font-size:1rem;font-weight:700;color:var(--gold);margin-bottom:1rem}
+.footer-links{display:flex;flex-direction:column;gap:.7rem}
+.footer-links a{font-size:.88rem;color:var(--text-2);transition:color var(--tr)}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.82rem;color:var(--text-3)}
+
+/* =============================================
+   STICKY MOBILE BAR
+   ============================================= */
+.sticky-mob{display:none;position:fixed;bottom:0;left:0;width:100%;z-index:900;background:rgba(18,18,18,.92);backdrop-filter:blur(12px);border-top:1px solid var(--border-gold);padding:.85rem 1.25rem;box-shadow:0 -8px 24px rgba(0,0,0,.6)}
+.sticky-mob .btn{width:100%}
+
+/* =============================================
+   BOOKING MODAL
+   ============================================= */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);z-index:3000;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;visibility:hidden;transition:all .35s ease}
+.modal-overlay.show{opacity:1;visibility:visible}
+.modal-box{width:100%;max-width:940px;height:90vh;background:#fff;border-radius:var(--rad);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.9)}
+.modal-head{background:var(--bg-card);color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border-gold)}
+.modal-head h3{font-size:1.1rem;display:flex;align-items:center;gap:.5rem}
+.modal-close{font-size:1.6rem;color:var(--text-2);padding:.25rem;transition:color var(--tr)}
+.modal-close:hover{color:#fff}
+.modal-frame{flex:1;border:none;width:100%}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media(max-width:900px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .about-badge{right:0;bottom:-3rem}
+  .gallery-thumbs{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+  .sticky-mob{display:block}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .services-grid{grid-template-columns:1fr}
+  .about-features{grid-template-columns:1fr}
+  footer{padding-bottom:5rem}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:.75rem;text-align:center}
+  section{padding:3.5rem 0}
+}
+@media(max-width:480px){
+  .hero-stats{grid-template-columns:1fr}
+  .gallery-thumbs{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="#" class="logo-link" aria-label="Accueil Tour 3 Barber">
+        <img src="assets/logo.png" alt="Logo Tour 3 Barber" />
+        <div class="logo-wordmark">
+          TOUR 3 BARBER
+          <span>Monthey · Valais</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#prestations" class="nav-link">Prestations</a></li>
+        <li><a href="#galerie"     class="nav-link">Galerie</a></li>
+        <li><a href="#salon"       class="nav-link">Le Salon</a></li>
+        <li><a href="#avis"        class="nav-link">Avis</a></li>
+        <li><a href="#contact"     class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="btn btn-primary nav-cta open-modal" aria-label="Réserver un rendez-vous">
+        Réserver un RDV
+      </button>
+
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ MOBILE DRAWER ============ -->
+<div class="mob-overlay" id="mob-overlay"></div>
+<aside class="mob-drawer" id="mob-drawer" aria-hidden="true">
+  <button class="mob-close" id="mob-close" aria-label="Fermer le menu">&times;</button>
+  <ul class="mob-links">
+    <li><a href="#prestations">Nos Prestations</a></li>
+    <li><a href="#galerie">Galerie Photos</a></li>
+    <li><a href="#salon">À Propos & Nicolas</a></li>
+    <li><a href="#avis">Avis Clients</a></li>
+    <li><a href="#contact">Horaires & Contact</a></li>
+  </ul>
+  <button class="btn btn-primary open-modal">Réserver un RDV</button>
+</aside>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero" aria-label="Présentation">
+  <div class="hero-bg">
+    <img src="assets/banner1.webp" alt="Tour 3 Barber — ambiance salon" />
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="stars">★★★★★</div>
+        <span><strong>5 / 5</strong> — Barber Shop d'Exception à Monthey</span>
+      </div>
+
+      <h1>Nico façonne votre style,<br /><span class="gradient-gold">T3B signe votre look</span></h1>
+
+      <p class="hero-sub">
+        Coupes sur mesure, mèches, couleurs et rasage à Monthey — et directement chez vous.
+      </p>
+
+      <div class="hero-ctas">
+        <button class="btn btn-primary open-modal">
+          ✂ Réserver maintenant
+        </button>
+        <a href="#prestations" class="btn btn-outline">
+          Voir les prestations ↓
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Prestations<br />disponibles</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">20–<br />60</div>
+          <div class="stat-label">CHF — Prix<br />transparents</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7j/7</div>
+          <div class="stat-label">Disponible<br />même le soir</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRESTATIONS ============ -->
+<section class="services-bg" id="prestations" aria-labelledby="services-h2">
+  <div class="container">
+    <div class="sec-head">
+      <div class="pill">✂ Tarifs Officiels</div>
+      <h2 id="services-h2">Nos Prestations <span class="gradient-gold">Sur-Mesure</span></h2>
+      <p>Toutes les prestations sont proposées au salon à Monthey ou directement à domicile dans la région du Valais.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Dégradé — 20 CHF / 45 min -->
+      <article class="svc-card">
+        <div class="svc-img">
+          <img src="assets/svc-degrade.webp" alt="Dégradé — Tour 3 Barber" loading="lazy" />
+          <div class="svc-badge">45 min</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <h3 class="svc-name">Dégradé</h3>
+            <div class="svc-price">20.00 CHF</div>
+          </div>
+          <p class="svc-desc">Dégradé américain ou à blanc à la tondeuse. Contours nets, traçage de précision et coiffage final inclus.</p>
+          <div class="svc-foot">
+            <div class="svc-dur">⏱ 45 minutes</div>
+            <button class="btn-gold-sm open-modal">Réserver →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Taper — 20 CHF / 45 min -->
+      <article class="svc-card">
+        <div class="svc-img">
+          <img src="assets/svc-taper.webp" alt="Taper — Tour 3 Barber" loading="lazy" />
+          <div class="svc-badge">45 min</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <h3 class="svc-name">Taper</h3>
+            <div class="svc-price">20.00 CHF</div>
+          </div>
+          <p class="svc-desc">Dégradé ciblé sur la nuque et les tempes. Volume conservé sur le dessus pour un style naturel et moderne.</p>
+          <div class="svc-foot">
+            <div class="svc-dur">⏱ 45 minutes</div>
+            <button class="btn-gold-sm open-modal">Réserver →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mèches — 50 CHF / 1h30 -->
+      <article class="svc-card">
+        <div class="svc-img">
+          <img src="assets/svc-meches.webp" alt="Mèches — Tour 3 Barber" loading="lazy" />
+          <div class="svc-badge">1h 30min</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <h3 class="svc-name">Mèches</h3>
+            <div class="svc-price">50.00 CHF</div>
+          </div>
+          <p class="svc-desc">Relief et contraste naturel par des mèches sur-mesure. Rinçage, soin fixateur de couleur et coiffage structuré.</p>
+          <div class="svc-foot">
+            <div class="svc-dur">⏱ 1h 30 minutes</div>
+            <button class="btn-gold-sm open-modal">Réserver →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Couleur — 60 CHF / 1h30 -->
+      <article class="svc-card">
+        <div class="svc-img">
+          <img src="assets/svc-couleur.webp" alt="Couleur — Tour 3 Barber" loading="lazy" />
+          <div class="svc-badge">1h 30min</div>
+        </div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <h3 class="svc-name">Couleur</h3>
+            <div class="svc-price">60.00 CHF</div>
+          </div>
+          <p class="svc-desc">Coloration intégrale masculine sur mesure. Idéale pour camoufler les cheveux blancs ou intensifier votre nuance.</p>
+          <div class="svc-foot">
+            <div class="svc-dur">⏱ 1h 30 minutes</div>
+            <button class="btn-gold-sm open-modal">Réserver →</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIE CAROUSEL ============ -->
+<section class="gallery-bg" id="galerie" aria-labelledby="gallery-h2">
+  <div class="container">
+    <div class="sec-head">
+      <div class="pill">📷 Réalisations T3B</div>
+      <h2 id="gallery-h2">Galerie des <span class="gradient-gold">Transformations</span></h2>
+      <p>Découvrez un aperçu du savoir-faire et des coupes réalisées par Nicolas.</p>
+    </div>
+
+    <div class="gallery-carousel-wrap">
+      <div class="gallery-track" id="gallery-track">
+        <div class="gallery-slide">
+          <img src="assets/gallery1.webp" alt="Réalisation T3B — Dégradé 1" />
+          <div class="gallery-slide-cap"><span class="slide-num">Photo 1 / 6</span></div>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/gallery2.webp" alt="Réalisation T3B — Coupe 2" />
+          <div class="gallery-slide-cap"><span class="slide-num">Photo 2 / 6</span></div>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/gallery3.webp" alt="Réalisation T3B — Coupe 3" />
+          <div class="gallery-slide-cap"><span class="slide-num">Photo 3 / 6</span></div>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/gallery4.webp" alt="Réalisation T3B — Coupe 4" />
+          <div class="gallery-slide-cap"><span class="slide-num">Photo 4 / 6</span></div>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/gallery5.webp" alt="Réalisation T3B — Mèches 5" />
+          <div class="gallery-slide-cap"><span class="slide-num">Photo 5 / 6</span></div>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/gallery6.webp" alt="Réalisation T3B — Barbe 6" />
+          <div class="gallery-slide-cap"><span class="slide-num">Photo 6 / 6</span></div>
+        </div>
+      </div>
+
+      <button class="gallery-arrow prev" id="gallery-prev" aria-label="Photo précédente">&#8592;</button>
+      <button class="gallery-arrow next" id="gallery-next" aria-label="Photo suivante">&#8594;</button>
+    </div>
+
+    <div class="gallery-dots" id="gallery-dots"></div>
+
+    <!-- Miniatures cliquables -->
+    <div class="gallery-thumbs" id="gallery-thumbs">
+      <div class="gthumb active" data-idx="0"><img src="assets/gallery1.webp" alt="Miniature 1" loading="lazy" /></div>
+      <div class="gthumb" data-idx="1"><img src="assets/gallery2.webp" alt="Miniature 2" loading="lazy" /></div>
+      <div class="gthumb" data-idx="2"><img src="assets/gallery3.webp" alt="Miniature 3" loading="lazy" /></div>
+      <div class="gthumb" data-idx="3"><img src="assets/gallery4.webp" alt="Miniature 4" loading="lazy" /></div>
+      <div class="gthumb" data-idx="4"><img src="assets/gallery5.webp" alt="Miniature 5" loading="lazy" /></div>
+      <div class="gthumb" data-idx="5"><img src="assets/gallery6.webp" alt="Miniature 6" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ À PROPOS ============ -->
+<section class="about-bg" id="salon" aria-labelledby="about-h2">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="assets/banner2.webp" alt="Nicolas de T3B Barber au travail" class="about-img" loading="lazy" />
+        <div class="about-badge">
+          <div class="badge-num">100%</div>
+          <div class="badge-lbl">Satisfait<br />ou recoupé</div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="pill">👤 L'Esprit T3B</div>
+        <h2 id="about-h2">Nico façonne votre style,<br /><span class="gradient-gold">T3B signe votre look</span></h2>
+        <p>
+          Bienvenue chez <strong>T3B Barber</strong>. Je propose des coupes sur mesure : <strong>tapers, dégradés, coupes aux ciseaux, mèches, couleurs et plus encore</strong>.
+        </p>
+        <p>
+          Je me déplace directement chez vous pour vous offrir un service de qualité, avec tout l'équipement professionnel requis pour une prestation d'exception — à Monthey, Collombey, St-Maurice et environs.
+        </p>
+
+        <div class="about-features">
+          <div class="feat-card">
+            <h4>✂ Précision</h4>
+            <p>Traçage millimétré et finitions au rasoir traditionnel.</p>
+          </div>
+          <div class="feat-card">
+            <h4>🏠 Domicile</h4>
+            <p>Service à domicile dans toute la région du Valais.</p>
+          </div>
+          <div class="feat-card">
+            <h4>🛡 Hygiène</h4>
+            <p>Désinfection systématique et matériel professionnel.</p>
+          </div>
+          <div class="feat-card">
+            <h4>🕓 Horaires</h4>
+            <p>Créneaux disponibles en soirée et tous les week-ends.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVIS CLIENTS ============ -->
+<section class="reviews-bg" id="avis" aria-labelledby="avis-h2">
+  <div class="container">
+    <div class="sec-head">
+      <div class="pill">💬 Témoignages</div>
+      <h2 id="avis-h2">Ce que disent <span class="gradient-gold">Nos Clients</span></h2>
+      <p>La satisfaction de nos clients est notre meilleure carte de visite.</p>
+    </div>
+
+    <div class="reviews-carousel-wrap">
+      <div class="reviews-track" id="reviews-track">
+
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <blockquote class="review-quote">"Nicolas est un vrai pro. Le dégradé à blanc est parfaitement exécuté, les contours sont d'une précision incroyable. En plus, le service à domicile est hyper pratique !"</blockquote>
+            <div class="review-author">
+              <div class="r-avatar">AM</div>
+              <div>
+                <div class="r-name">Alexandre M.</div>
+                <div class="r-city">★ Monthey</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <blockquote class="review-quote">"J'ai testé le Taper avec taille de barbe : travail remarquable. Nico prend le temps de comprendre exactement ce qu'on veut. Je recommande les yeux fermés !"</blockquote>
+            <div class="review-author">
+              <div class="r-avatar">KB</div>
+              <div>
+                <div class="r-name">Karim B.</div>
+                <div class="r-city">★ Collombey</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <blockquote class="review-quote">"Meilleur barber de la région ! Ponctuel, matos au top et ambiance conviviale. La réservation en ligne prend 30 secondes, c'est parfait."</blockquote>
+            <div class="review-author">
+              <div class="r-avatar">JT</div>
+              <div>
+                <div class="r-name">Julien T.</div>
+                <div class="r-city">★ Saint-Maurice</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="rev-nav">
+        <button class="rev-arrow" id="rev-prev" aria-label="Avis précédent">&#8592;</button>
+        <div class="rev-dots" id="rev-dots"></div>
+        <button class="rev-arrow" id="rev-next" aria-label="Avis suivant">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT & HORAIRES ============ -->
+<section class="contact-bg" id="contact" aria-labelledby="contact-h2">
+  <div class="container">
+    <div class="sec-head">
+      <div class="pill">📍 Infos Pratiques</div>
+      <h2 id="contact-h2">Horaires & <span class="gradient-gold">Réservation</span></h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="info-card">
+        <div>
+          <h3>⚠️ Prestations sur Rendez-vous uniquement</h3>
+          <p style="color:var(--text-2);font-size:.88rem;margin-top:.4rem;">Toutes les coupes et prestations sont exclusivement sur rendez-vous. Réservez votre créneau ci-dessous avant de vous déplacer.</p>
+        </div>
+
+        <table class="hours-table">
+          <tbody>
+            <tr><td>Lundi</td><td>10:00 – 12:00 &nbsp;|&nbsp; 13:30 – 18:00</td></tr>
+            <tr><td>Mardi</td><td>19:00 – 20:30</td></tr>
+            <tr><td>Mercredi</td><td>19:00 – 20:30</td></tr>
+            <tr><td>Jeudi</td><td>19:00 – 20:30</td></tr>
+            <tr><td>Vendredi</td><td>19:00 – 20:30</td></tr>
+            <tr><td>Samedi</td><td>18:00 – 19:30</td></tr>
+            <tr><td>Dimanche</td><td>10:00 – 12:00 &nbsp;|&nbsp; 14:00 – 18:00</td></tr>
+          </tbody>
+        </table>
+
+        <div style="background:rgba(212,175,55,.06);border:1px solid var(--border-gold);border-radius:var(--rad-sm);padding:1rem 1.25rem;">
+          <p style="font-size:.92rem;font-weight:700;color:var(--gold);margin-bottom:.35rem;">📅 Prendre Rendez-vous</p>
+          <p style="font-size:.84rem;color:var(--text-2);line-height:1.65;">Choisissez votre prestation, votre date et votre heure directement en ligne. Confirmation instantanée.</p>
+        </div>
+
+        <button class="btn btn-primary open-modal cta-box">✂ Réserver mon RDV maintenant</button>
+      </div>
+
+      <div class="social-card">
+        <div>
+          <h3>📍 Où me retrouver</h3>
+          <p>Suivez Tour 3 Barber sur les réseaux pour les dernières réalisations, promotions et disponibilités en temps réel.</p>
+        </div>
+
+        <a href="https://www.instagram.com/tour.3.barber/" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <div>
+            <strong>Instagram</strong>
+            <span>@tour.3.barber</span>
+          </div>
+        </a>
+
+        <a href="https://www.tiktok.com/@tour3barber" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.26 8.26 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/>
+          </svg>
+          <div>
+            <strong>TikTok</strong>
+            <span>@tour3barber</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <style>
+    .footer-social-link { display: flex; align-items: center; gap: 10px; color: var(--text-2); text-decoration: none; margin-bottom: 0.5rem; transition: color 0.2s; }
+    .footer-social-link:hover { color: var(--gold); }
+    .footer-socials { display: flex; flex-direction: column; }
+  </style>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Logo Tour 3 Barber" style="width:120px;height:auto;" />
+        <p>Votre barber shop d'exception à Monthey. Nicolas façonne votre style avec passion et précision millimétrée — au salon ou directement chez vous.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#prestations">Nos Prestations</a></li>
+          <li><a href="#galerie">Galerie Photos</a></li>
+          <li><a href="#salon">Le Salon &amp; Nico</a></li>
+          <li><a href="#avis">Avis Clients</a></li>
+          <li><a href="#contact">Horaires &amp; Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Où me retrouver</h4>
+        <p style="font-size:.84rem;color:var(--text-2);margin-bottom:.75rem;">📍 Monthey — Valais, Suisse</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/tour.3.barber/" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram — @tour.3.barber
+          </a>
+          <a href="https://www.tiktok.com/@tour3barber" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.26 8.26 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/>
+            </svg>
+            TikTok — @tour3barber
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Tour 3 Barber — Monthey, Valais (Suisse). Tous droits réservés.</p>
+      <button class="btn-gold-sm open-modal">Réserver en ligne</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE BAR ============ -->
+<div class="sticky-mob">
+  <button class="btn btn-primary open-modal">✂ Réserver un Rendez-vous</button>
+</div>
+
+<!-- ============ BOOKING MODAL ============ -->
+<div class="modal-overlay" id="booking-modal" role="dialog" aria-modal="true" aria-label="Réservation Tour 3 Barber">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>📅 Réservation Tour 3 Barber</h3>
+      <button class="modal-close" id="modal-close" aria-label="Fermer">&times;</button>
+    </div>
+    <iframe
+      class="modal-frame"
+      id="booking-frame"
+      src=""
+      data-src="https://www.sumupbookings.com/tour3barber"
+      title="Formulaire de réservation Tour 3 Barber"
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+(function(){
+  'use strict';
+
+  /* ---- Sticky Header ---- */
+  var header = document.getElementById('header');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  }, {passive:true});
+
+  /* ---- Mobile Menu ---- */
+  var burger = document.getElementById('burger');
+  var overlay = document.getElementById('mob-overlay');
+  var drawer = document.getElementById('mob-drawer');
+
+  function openDrawer(){
+    burger.classList.add('open');
+    burger.setAttribute('aria-expanded','true');
+    overlay.classList.add('show');
+    drawer.classList.add('show');
+    drawer.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeDrawer(){
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    overlay.classList.remove('show');
+    drawer.classList.remove('show');
+    drawer.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+
+  burger.addEventListener('click', openDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  document.getElementById('mob-close').addEventListener('click', closeDrawer);
+  document.querySelectorAll('.mob-links a').forEach(function(l){
+    l.addEventListener('click', closeDrawer);
+  });
+
+  /* ---- Booking Modal ---- */
+  var modal = document.getElementById('booking-modal');
+  var frame = document.getElementById('booking-frame');
+  var modalClose = document.getElementById('modal-close');
+  var iframeLoaded = false;
+
+  function openModal(){
+    if(!iframeLoaded){
+      frame.src = frame.getAttribute('data-src');
+      iframeLoaded = true;
+    }
+    modal.classList.add('show');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('show');
+    document.body.style.overflow='';
+  }
+
+  document.querySelectorAll('.open-modal').forEach(function(btn){
+    btn.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+  });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+
+  /* ---- Gallery Carousel ---- */
+  var gTrack = document.getElementById('gallery-track');
+  var gSlides = gTrack ? gTrack.querySelectorAll('.gallery-slide') : [];
+  var gDotsEl = document.getElementById('gallery-dots');
+  var gThumbsEl = document.getElementById('gallery-thumbs');
+  var gIdx = 0;
+
+  if(gSlides.length){
+    // Build dots
+    gSlides.forEach(function(_, i){
+      var d = document.createElement('div');
+      d.className = 'gdot' + (i===0?' active':'');
+      d.addEventListener('click', function(){ goGallery(i); });
+      gDotsEl.appendChild(d);
+    });
+    var gDots = gDotsEl.querySelectorAll('.gdot');
+    var gThumbs = gThumbsEl ? gThumbsEl.querySelectorAll('.gthumb') : [];
+
+    function goGallery(i){
+      gIdx = (i+gSlides.length)%gSlides.length;
+      gTrack.style.transform = 'translateX(-'+gIdx*100+'%)';
+      // Update dots
+      gDots.forEach(function(d,j){ d.classList.toggle('active', j===gIdx); });
+      // Update thumbs
+      gThumbs.forEach(function(t,j){ t.classList.toggle('active', j===gIdx); });
+      // Update caption
+      gSlides.forEach(function(s,j){
+        var cap = s.querySelector('.slide-num');
+        if(cap) cap.textContent = 'Photo '+(j+1)+' / '+gSlides.length;
+      });
+    }
+
+    document.getElementById('gallery-prev').addEventListener('click', function(){ goGallery(gIdx-1); });
+    document.getElementById('gallery-next').addEventListener('click', function(){ goGallery(gIdx+1); });
+    gThumbs.forEach(function(t){
+      t.addEventListener('click', function(){ goGallery(parseInt(t.dataset.idx)); });
+    });
+
+    // Touch / Swipe
+    var tsX=0;
+    gTrack.addEventListener('touchstart', function(e){ tsX=e.touches[0].clientX; },{passive:true});
+    gTrack.addEventListener('touchend', function(e){
+      var dx = e.changedTouches[0].clientX - tsX;
+      if(Math.abs(dx)>40) goGallery(dx<0?gIdx+1:gIdx-1);
+    });
+
+    // Autoplay 4s
+    var gTimer = setInterval(function(){ goGallery(gIdx+1); }, 4000);
+    gTrack.parentElement.addEventListener('mouseenter', function(){ clearInterval(gTimer); });
+    gTrack.parentElement.addEventListener('mouseleave', function(){ gTimer=setInterval(function(){ goGallery(gIdx+1); },4000); });
+  }
+
+  /* ---- Reviews Carousel ---- */
+  var rTrack = document.getElementById('reviews-track');
+  var rSlides = rTrack ? rTrack.querySelectorAll('.review-slide') : [];
+  var rDotsEl = document.getElementById('rev-dots');
+  var rIdx = 0;
+
+  if(rSlides.length){
+    rSlides.forEach(function(_, i){
+      var d = document.createElement('div');
+      d.className = 'rdot' + (i===0?' active':'');
+      d.addEventListener('click', function(){ goReview(i); });
+      rDotsEl.appendChild(d);
+    });
+    var rDots = rDotsEl.querySelectorAll('.rdot');
+
+    function goReview(i){
+      rIdx = (i+rSlides.length)%rSlides.length;
+      rTrack.style.transform = 'translateX(-'+rIdx*100+'%)';
+      rDots.forEach(function(d,j){ d.classList.toggle('active', j===rIdx); });
+    }
+
+    document.getElementById('rev-prev').addEventListener('click', function(){ goReview(rIdx-1); });
+    document.getElementById('rev-next').addEventListener('click', function(){ goReview(rIdx+1); });
+
+    var rTimer = setInterval(function(){ goReview(rIdx+1); }, 5000);
+    rTrack.parentElement.addEventListener('mouseenter', function(){ clearInterval(rTimer); });
+    rTrack.parentElement.addEventListener('mouseleave', function(){ rTimer=setInterval(function(){ goReview(rIdx+1); },5000); });
+  }
+
+  /* ---- Active Nav Link on Scroll ---- */
+  var sections = document.querySelectorAll('main section[id]');
+  var navLinks = document.querySelectorAll('.nav-link');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          navLinks.forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('href')==='#'+e.target.id);
+          });
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){ io.observe(s); });
+  }
+
+  /* ---- ESC Key ---- */
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape'){
+      closeDrawer();
+      closeModal();
+    }
+  });
+
+})();
+</script>
+</body>
+</html>
