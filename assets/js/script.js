@@ -354,6 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Liste blanche : villes sans frais de déplacement (normalisées, sans accents, en minuscules)
   const villesGratuites = [
     "monthey",
+    "muraz",
     "chemex",       // Chemex
     "choex",        // Choëx
     "troistorrents", // Troistorrents
